@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F5431BA12107D19B00A99F47 /* ScaryCreatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5431BA02107D19B00A99F47 /* ScaryCreatureData.swift */; };
+		F5431BA32107D1AB00A99F47 /* ScaryCreatureDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5431BA22107D1AB00A99F47 /* ScaryCreatureDoc.swift */; };
+		F56E58CF21093B830065ACD9 /* ScaryCreatureDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E58CE21093B830065ACD9 /* ScaryCreatureDatabase.swift */; };
+		F595E01C2106393D005D833E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F595E01B2106393D005D833E /* Extensions.swift */; };
+		F595E03021064AAD005D833E /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F595E02F21064AAD005D833E /* RateView.swift */; };
+		F5AFC84D2106323900EF088D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AFC84C2106323900EF088D /* AppDelegate.swift */; };
+		F5AFC84F2106323900EF088D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AFC84E2106323900EF088D /* MasterViewController.swift */; };
+		F5AFC8512106323900EF088D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AFC8502106323900EF088D /* DetailViewController.swift */; };
+		F5AFC8542106323900EF088D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5AFC8522106323900EF088D /* Main.storyboard */; };
+		F5AFC8562106323B00EF088D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5AFC8552106323B00EF088D /* Assets.xcassets */; };
+		F5AFC8592106323B00EF088D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5AFC8572106323B00EF088D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F5431BA02107D19B00A99F47 /* ScaryCreatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaryCreatureData.swift; sourceTree = "<group>"; };
+		F5431BA22107D1AB00A99F47 /* ScaryCreatureDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaryCreatureDoc.swift; sourceTree = "<group>"; };
+		F56E58CE21093B830065ACD9 /* ScaryCreatureDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaryCreatureDatabase.swift; sourceTree = "<group>"; };
+		F595E01B2106393D005D833E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F595E02F21064AAD005D833E /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		F5AFC8492106323900EF088D /* ScaryCreatures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaryCreatures.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5AFC84C2106323900EF088D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5AFC84E2106323900EF088D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		F5AFC8502106323900EF088D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F5AFC8532106323900EF088D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5AFC8552106323B00EF088D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5AFC8582106323B00EF088D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5AFC85A2106323B00EF088D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5AFC8462106323900EF088D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F595E018210634E5005D833E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5431BA02107D19B00A99F47 /* ScaryCreatureData.swift */,
+				F5431BA22107D1AB00A99F47 /* ScaryCreatureDoc.swift */,
+				F56E58CE21093B830065ACD9 /* ScaryCreatureDatabase.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F595E019210634EF005D833E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5AFC84E2106323900EF088D /* MasterViewController.swift */,
+				F5AFC8502106323900EF088D /* DetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F595E01A2106392F005D833E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F595E01B2106393D005D833E /* Extensions.swift */,
+				F595E02F21064AAD005D833E /* RateView.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		F5AFC8402106323900EF088D = {
+			isa = PBXGroup;
+			children = (
+				F5AFC84B2106323900EF088D /* ScaryCreatures */,
+				F5AFC84A2106323900EF088D /* Products */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		F5AFC84A2106323900EF088D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5AFC8492106323900EF088D /* ScaryCreatures.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5AFC84B2106323900EF088D /* ScaryCreatures */ = {
+			isa = PBXGroup;
+			children = (
+				F595E01A2106392F005D833E /* Support */,
+				F595E019210634EF005D833E /* View Controllers */,
+				F595E018210634E5005D833E /* Model */,
+				F5AFC84C2106323900EF088D /* AppDelegate.swift */,
+				F5AFC8522106323900EF088D /* Main.storyboard */,
+				F5AFC8552106323B00EF088D /* Assets.xcassets */,
+				F5AFC8572106323B00EF088D /* LaunchScreen.storyboard */,
+				F5AFC85A2106323B00EF088D /* Info.plist */,
+			);
+			path = ScaryCreatures;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5AFC8482106323900EF088D /* ScaryCreatures */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5AFC85D2106323B00EF088D /* Build configuration list for PBXNativeTarget "ScaryCreatures" */;
+			buildPhases = (
+				F5AFC8452106323900EF088D /* Sources */,
+				F5AFC8462106323900EF088D /* Frameworks */,
+				F5AFC8472106323900EF088D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScaryCreatures;
+			productName = ScaryBugs;
+			productReference = F5AFC8492106323900EF088D /* ScaryCreatures.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5AFC8412106323900EF088D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Ray Wenderlich";
+				TargetAttributes = {
+					F5AFC8482106323900EF088D = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = F5AFC8442106323900EF088D /* Build configuration list for PBXProject "ScaryCreatures" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5AFC8402106323900EF088D;
+			productRefGroup = F5AFC84A2106323900EF088D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5AFC8482106323900EF088D /* ScaryCreatures */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5AFC8472106323900EF088D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AFC8592106323B00EF088D /* LaunchScreen.storyboard in Resources */,
+				F5AFC8562106323B00EF088D /* Assets.xcassets in Resources */,
+				F5AFC8542106323900EF088D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5AFC8452106323900EF088D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AFC8512106323900EF088D /* DetailViewController.swift in Sources */,
+				F5AFC84F2106323900EF088D /* MasterViewController.swift in Sources */,
+				F595E03021064AAD005D833E /* RateView.swift in Sources */,
+				F5AFC84D2106323900EF088D /* AppDelegate.swift in Sources */,
+				F5431BA32107D1AB00A99F47 /* ScaryCreatureDoc.swift in Sources */,
+				F56E58CF21093B830065ACD9 /* ScaryCreatureDatabase.swift in Sources */,
+				F595E01C2106393D005D833E /* Extensions.swift in Sources */,
+				F5431BA12107D19B00A99F47 /* ScaryCreatureData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F5AFC8522106323900EF088D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5AFC8532106323900EF088D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5AFC8572106323B00EF088D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5AFC8582106323B00EF088D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5AFC85B2106323B00EF088D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "ScaryBugs/ScaryBugs-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F5AFC85C2106323B00EF088D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "ScaryBugs/ScaryBugs-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5AFC85E2106323B00EF088D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ScaryCreatures/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.ScaryCreatures;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F5AFC85F2106323B00EF088D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ScaryCreatures/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.ScaryCreatures;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5AFC8442106323900EF088D /* Build configuration list for PBXProject "ScaryCreatures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5AFC85B2106323B00EF088D /* Debug */,
+				F5AFC85C2106323B00EF088D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5AFC85D2106323B00EF088D /* Build configuration list for PBXNativeTarget "ScaryCreatures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5AFC85E2106323B00EF088D /* Debug */,
+				F5AFC85F2106323B00EF088D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5AFC8412106323900EF088D /* Project object */;
+}
