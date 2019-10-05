@@ -86,6 +86,9 @@ class DetailViewController: UIViewController {
 extension DetailViewController: RateViewDelegate {
   func rateViewRatingDidChange(rateView: RateView, newRating: Float) {
     detailItem?.data?.rating = newRating
+    // 변경시 데이터 저장 반영
+    detailItem?.saveData()
+    detailItem?.saveImages()
   }
 }
 

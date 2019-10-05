@@ -34,7 +34,6 @@ class MasterViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.leftBarButtonItem = editButtonItem
-    
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
     navigationItem.rightBarButtonItem = addButton
     
@@ -62,36 +61,36 @@ class MasterViewController: UITableViewController {
   // MARK: - Preloading Data
   
   func loadCreatures() {
-    let creature1 = ScaryCreatureDoc(title: "Ghost",
-                                     rating: 5,
-                                     thumbImage: #imageLiteral(resourceName: "ghostThumb"),
-                                     fullImage: #imageLiteral(resourceName: "ghost"))
-    let creature2 = ScaryCreatureDoc(title: "Monster",
-                                     rating: 5,
-                                     thumbImage: #imageLiteral(resourceName: "monsterThumb"),
-                                     fullImage: #imageLiteral(resourceName: "monster"))
-    let creature3 = ScaryCreatureDoc(title: "Panda",
-                                     rating: 1,
-                                     thumbImage: #imageLiteral(resourceName: "pandaThumb"),
-                                     fullImage: #imageLiteral(resourceName: "panda"))
-    let creature4 = ScaryCreatureDoc(title: "Red Bug",
-                                     rating: 3,
-                                     thumbImage: #imageLiteral(resourceName: "redBugThumb"),
-                                     fullImage: #imageLiteral(resourceName: "redBug"))
-    let creature5 = ScaryCreatureDoc(title: "Slug",
-                                     rating: 4,
-                                     thumbImage: #imageLiteral(resourceName: "slugThumb"),
-                                     fullImage: #imageLiteral(resourceName: "slug"))
-    let creature6 = ScaryCreatureDoc(title: "Spider",
-                                     rating: 3,
-                                     thumbImage: #imageLiteral(resourceName: "spiderThumb"),
-                                     fullImage: #imageLiteral(resourceName: "spider"))
-    let creature7 = ScaryCreatureDoc(title: "Yeti",
-                                     rating: 3,
-                                     thumbImage: #imageLiteral(resourceName: "yetiThumb"),
-                                     fullImage: #imageLiteral(resourceName: "yeti"))
+//    let creature1 = ScaryCreatureDoc(title: "Ghost",
+//                                     rating: 5,
+//                                     thumbImage: #imageLiteral(resourceName: "ghostThumb"),
+//                                     fullImage: #imageLiteral(resourceName: "ghost"))
+//    let creature2 = ScaryCreatureDoc(title: "Monster",
+//                                     rating: 5,
+//                                     thumbImage: #imageLiteral(resourceName: "monsterThumb"),
+//                                     fullImage: #imageLiteral(resourceName: "monster"))
+//    let creature3 = ScaryCreatureDoc(title: "Panda",
+//                                     rating: 1,
+//                                     thumbImage: #imageLiteral(resourceName: "pandaThumb"),
+//                                     fullImage: #imageLiteral(resourceName: "panda"))
+//    let creature4 = ScaryCreatureDoc(title: "Red Bug",
+//                                     rating: 3,
+//                                     thumbImage: #imageLiteral(resourceName: "redBugThumb"),
+//                                     fullImage: #imageLiteral(resourceName: "redBug"))
+//    let creature5 = ScaryCreatureDoc(title: "Slug",
+//                                     rating: 4,
+//                                     thumbImage: #imageLiteral(resourceName: "slugThumb"),
+//                                     fullImage: #imageLiteral(resourceName: "slug"))
+//    let creature6 = ScaryCreatureDoc(title: "Spider",
+//                                     rating: 3,
+//                                     thumbImage: #imageLiteral(resourceName: "spiderThumb"),
+//                                     fullImage: #imageLiteral(resourceName: "spider"))
+//    let creature7 = ScaryCreatureDoc(title: "Yeti",
+//                                     rating: 3,
+//                                     thumbImage: #imageLiteral(resourceName: "yetiThumb"),
+//                                     fullImage: #imageLiteral(resourceName: "yeti"))
 
-    creatures = [creature1, creature2, creature3, creature4, creature5, creature6, creature7]
+    creatures = ScaryCreatureDatabase.loadScaryCreatureDoc()
   }
   
   // MARK: - Table View
@@ -116,7 +115,9 @@ class MasterViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      creatures.remove(at: indexPath.row)
+      let creatureToDelete = creatures.remove(at: indexPath.row)
+      // 실제 디렉터리에서 삭제
+      creatureToDelete.deleteDoc()
       tableView.deleteRows(at: [indexPath], with: .fade)
     }
   }

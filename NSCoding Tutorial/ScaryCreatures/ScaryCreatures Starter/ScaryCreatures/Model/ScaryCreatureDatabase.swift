@@ -34,7 +34,7 @@ class ScaryCreatureDatabase: NSObject {
     // 앱의 도큐먼트 폴더 url
     let paths = FileManager.default.urls(for: .documentDirectory,
                                          in: .userDomainMask)
-    print(paths.first!)
+    print("경로: \(paths.first!)")
     // 도큐먼트 경로 생성
     let documentDirectoryURL = paths.first!.appendingPathComponent("PrivateDocuments")
     
@@ -50,7 +50,31 @@ class ScaryCreatureDatabase: NSObject {
   }()
   
   class func nextScaryCreatureDocPath() -> URL? {
-    return nil
+    guard let files = try? FileManager.default.contentsOfDirectory(at: privateDocDir,
+                                                                   includingPropertiesForKeys: nil,
+                                                                   options: .skipsHiddenFiles)
+      else { return nil }
+    
+    var maxNumber = 0
+    files.forEach {
+      let fileName = $0.deletingPathExtension().lastPathComponent
+      maxNumber = max(Int(fileName) ?? 0, maxNumber)
+    }
+    
+    return privateDocDir
+      .appendingPathComponent("\(maxNumber+1).scarycreature", isDirectory: true)
+  }
+  
+  class func loadScaryCreatureDoc() -> [ScaryCreatureDoc] {
+    guard
+      let files = try? FileManager.default.contentsOfDirectory(at: privateDocDir,
+                                                               includingPropertiesForKeys: nil,
+                                                               options: .skipsHiddenFiles)
+      else { return [] }
+    
+    return files
+      .compactMap { ScaryCreatureDoc(docPath: $0 ) }
+    
   }
   
 }

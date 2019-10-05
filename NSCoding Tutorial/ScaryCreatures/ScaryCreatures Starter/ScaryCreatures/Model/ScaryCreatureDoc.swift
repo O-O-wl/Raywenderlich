@@ -41,8 +41,7 @@ class ScaryCreatureDoc: NSObject {
         else { return nil }
       
       // 읽어온 데이터 언아카이빙
-      _data = try! NSKeyedUnarchiver.unarchivedObject(ofClass: ScaryCreatureData.self,
-                                                     from: encodedData)
+      _data = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(encodedData) as! ScaryCreatureData
       return _data
     }
     set {
@@ -89,6 +88,7 @@ class ScaryCreatureDoc: NSObject {
     self.fullImage = fullImage
     // 생성 후 데이터저장
     saveData()
+    saveImages()
   }
   
   // 해당 인스턴스를 저장할 디스크의 위치
@@ -102,7 +102,7 @@ class ScaryCreatureDoc: NSObject {
   // docPath가 없다면 한번만 생성 
   func createDocPath() throws {
     guard
-      docPath != nil
+      docPath == nil
       else { return }
     
     docPath = ScaryCreatureDatabase.nextScaryCreatureDocPath()
@@ -135,13 +135,35 @@ class ScaryCreatureDoc: NSObject {
     
   }
   
+  func saveImages() {
+    guard
+      let thumbImageData = thumbImage?.pngData(),
+      let fullImageData = fullImage?.pngData()
+      else { return }
+    
+    do {
+      try createDocPath()
+    } catch {
+      print("Couldn't create save Folder. " + error.localizedDescription)
+      return
+    }
+    
+    guard
+      let thumbImageURL = docPath?.appendingPathComponent(Keys.thumbImageFile.rawValue),
+      let fullImageURL = docPath?.appendingPathComponent(Keys.fullImageFile.rawValue)
+      else { return }
+    
+    try? thumbImageData.write(to: thumbImageURL)
+    try? fullImageData.write(to: fullImageURL)
+  }
+  
   // 파일을 통째로 삭제
-  func deleteData() {
+  func deleteDoc() {
     if let docPath = docPath {
       do {
         try FileManager.default.removeItem(at: docPath)
       } catch {
-       print("Couldn't delete folder. " + error.localizedDescription)
+        print("Couldn't delete folder. " + error.localizedDescription)
       }
     }
   }
