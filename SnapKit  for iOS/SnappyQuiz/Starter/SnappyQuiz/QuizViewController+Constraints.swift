@@ -31,56 +31,53 @@ import SnapKit
 
 extension QuizViewController {
   func setupConstraints() {
-    guard let navView = navigationController?.view else { return }
-
-    viewProgress.translatesAutoresizingMaskIntoConstraints = false
     
-    NSLayoutConstraint.activate([
-      viewProgress.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      viewProgress.heightAnchor.constraint(equalToConstant: 32),
-      viewProgress.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-    ])
-
     updateProgress(to: 0)
-
-    lblTimer.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-        lblTimer.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.45),
-        lblTimer.heightAnchor.constraint(equalToConstant: 45),
-        lblTimer.topAnchor.constraint(equalTo: viewProgress.bottomAnchor, constant: 32),
-        lblTimer.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-    ])
     
-    lblQuestion.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-        lblQuestion.topAnchor.constraint(equalTo: lblTimer.bottomAnchor, constant: 24),
-        lblQuestion.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-        lblQuestion.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
-    ])
-
-    lblMessage.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-        lblMessage.topAnchor.constraint(equalTo: navView.topAnchor),
-        lblMessage.bottomAnchor.constraint(equalTo: navView.bottomAnchor),
-        lblMessage.leadingAnchor.constraint(equalTo: navView.leadingAnchor),
-        lblMessage.trailingAnchor.constraint(equalTo: navView.trailingAnchor)
-    ])
-
-    svButtons.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-        svButtons.leadingAnchor.constraint(equalTo: lblQuestion.leadingAnchor),
-        svButtons.trailingAnchor.constraint(equalTo: lblQuestion.trailingAnchor),
-        svButtons.topAnchor.constraint(equalTo: lblQuestion.bottomAnchor, constant: 16),
-        svButtons.heightAnchor.constraint(equalToConstant: 80)
-    ])
+    lblTimer.snp.makeConstraints { make in
+      make.width.equalToSuperview().multipliedBy(0.45).labeled("Timer Width") // 1
+      make.height.equalTo(45) // 2
+      make.top.equalTo(viewProgress.snp.bottom).offset(32) // 3
+      make.centerX.equalToSuperview().labeled("Timer cenerX") // 4
+    }
+    
+    lblQuestion.snp.makeConstraints { make in
+      make.top.equalTo(lblTimer.snp.bottom).offset(24)
+      make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+    }
+    lblMessage.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    svButtons.snp.makeConstraints { make in
+      make.leading.trailing.equalTo(lblQuestion)
+      make.top.equalTo(lblQuestion.snp.bottom).offset(16)
+      make.height.equalTo(80)
+    }
   }
   
   func updateProgress(to progress: Double) {
-    if let constraint = progressConstraint {
-      constraint.isActive = false
+    
+    viewProgress.snp.remakeConstraints { maker in
+      maker.top.equalTo(view.safeAreaLayoutGuide)
+      maker.width.equalToSuperview().multipliedBy(progress)
+      maker.height.equalTo(32)
+      maker.leading.equalToSuperview().labeled("ViewProgress Leading To SuperView")
     }
-
-    progressConstraint = viewProgress.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(progress))
-    progressConstraint.isActive = true
+    
+  }
+}
+extension QuizViewController {
+  
+  override func willTransition(to newCollection: UITraitCollection,
+                               with coordinator: UIViewControllerTransitionCoordinator) {
+    super.willTransition(to: newCollection, with: coordinator)
+    
+    let isPortrait = UIDevice.current.orientation.isPortrait
+    
+    lblTimer.snp.updateConstraints { maker in
+      maker.height.equalTo(isPortrait ? 45 : 65)
+    }
+    
+    lblTimer.font = UIFont.systemFont(ofSize: isPortrait ? 20 : 32, weight: .light)
   }
 }

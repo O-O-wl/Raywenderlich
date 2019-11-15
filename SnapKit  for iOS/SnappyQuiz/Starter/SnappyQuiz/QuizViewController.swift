@@ -36,7 +36,7 @@ class QuizViewController: UIViewController {
   var timer: Timer?
   
   /// Progress bar constraint
-  var progressConstraint: NSLayoutConstraint!
+//  var progressConstraint: NSLayoutConstraint!
 
   // MARK: - Views
   lazy var viewProgress: UIView = {
