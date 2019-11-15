@@ -35,14 +35,16 @@ extension QuizViewController {
     
     updateProgress(to: 0)
     
-    lblTimer.translatesAutoresizingMaskIntoConstraints = false
     
-//    NSLayoutConstraint.activate([
-//      lblTimer.widthAnchor.constraint(equalTo: lblTimer.superview!.widthAnchor, multiplier: 0.45),
-//      lblTimer.heightAnchor.constraint(equalToConstant: 45),
-//      lblTimer.topAnchor.constraint(equalTo: viewProgress.bottomAnchor,constant: 32),
-//      lblTimer.centerXAnchor.constraint(equalTo: lblTimer.superview!.centerXAnchor)
-//      ])
+    /// - Note: NSLayoutConstraint
+    //    lblTimer.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //    NSLayoutConstraint.activate([
+    //      lblTimer.widthAnchor.constraint(equalTo: lblTimer.superview!.widthAnchor, multiplier: 0.45),
+    //      lblTimer.heightAnchor.constraint(equalToConstant: 45),
+    //      lblTimer.topAnchor.constraint(equalTo: viewProgress.bottomAnchor,constant: 32),
+    //      lblTimer.centerXAnchor.constraint(equalTo: lblTimer.superview!.centerXAnchor)
+    //      ])
     
     lblTimer.snp.makeConstraints { maker in
       maker.width.equalToSuperview().multipliedBy(0.45)
@@ -50,28 +52,79 @@ extension QuizViewController {
       maker.top.equalTo(viewProgress.snp.bottom).offset(32)
       maker.centerX.equalToSuperview()
     }
-
-//    lblTimer.snp.makeConstraints { make in
-//      make.width.equalToSuperview().multipliedBy(0.45).labeled("timerWidth")
-//      make.height.equalTo(45).labeled("timerHeight")
-//      make.top.equalTo(viewProgress.snp.bottom).offset(32).labeled("timerTop")
-//      make.centerX.equalToSuperview().labeled("timerCenterX")
-//    }
     
-    lblQuestion.snp.makeConstraints { make in
-      make.top.equalTo(lblTimer.snp.bottom).offset(24)
-      make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+    /// - Note: Default
+    //    lblTimer.snp.makeConstraints { make in
+    //      make.width.equalToSuperview().multipliedBy(0.45).labeled("timerWidth")
+    //      make.height.equalTo(45).labeled("timerHeight")
+    //      make.top.equalTo(viewProgress.snp.bottom).offset(32).labeled("timerTop")
+    //      make.centerX.equalToSuperview().labeled("timerCenterX")
+    //    }
+    
+    
+    
+    /// - Note: NSLayoutConstraint
+    //    lblQuestion.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //    NSLayoutConstraint.activate([
+    //      lblQuestion.topAnchor.constraint(equalTo: lblTimer.bottomAnchor, constant: 24),
+    //      lblQuestion.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+    //      lblQuestion.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+    //    ])
+    
+    lblQuestion.snp.makeConstraints { maker in
+      maker.top.equalTo(lblTimer.snp.bottom).offset(24)
+      maker.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
     }
     
-    lblMessage.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+    /// - Note: Default
+    //    lblQuestion.snp.makeConstraints { make in
+    //      make.top.equalTo(lblTimer.snp.bottom).offset(24)
+    //      make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+    //    }
+    //
+    
+    /// - Note: NSLayoutConstraint
+    //    lblMessage.translatesAutoresizingMaskIntoConstraints = false
+    //    NSLayoutConstraint.activate([
+    //      lblMessage.topAnchor.constraint(equalTo: lblMessage.superview!.topAnchor),
+    //      lblMessage.bottomAnchor.constraint(equalTo: lblMessage.superview!.bottomAnchor),
+    //      lblMessage.trailingAnchor.constraint(equalTo: lblMessage.superview!.trailingAnchor),
+    //      lblMessage.leadingAnchor.constraint(equalTo: lblMessage.superview!.leadingAnchor)
+    //    ])
+    
+    
+    lblMessage.snp.makeConstraints { maker in
+      maker.edges.equalToSuperview()
     }
     
-    svButtons.snp.makeConstraints { make in
-      make.leading.trailing.equalTo(lblQuestion)
-      make.top.equalTo(lblQuestion.snp.bottom).offset(16)
-      make.height.equalTo(80)
+    /// - Note: Default
+    //    lblMessage.snp.makeConstraints { make in
+    //      make.edges.equalToSuperview()
+    //    }
+    
+    /// - Note: NSLayoutConstraint
+    //    svButtons.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //    NSLayoutConstraint.activate([
+    //      svButtons.leadingAnchor.constraint(equalTo: lblQuestion.leadingAnchor),
+    //      svButtons.trailingAnchor.constraint(equalTo: lblQuestion.trailingAnchor),
+    //      svButtons.topAnchor.constraint(equalTo: lblQuestion.bottomAnchor, constant: 16),
+    //      svButtons.heightAnchor.constraint(equalToConstant: 80)
+    //    ])
+    
+    svButtons.snp.makeConstraints { maker in
+      maker.leading.trailing.equalTo(lblQuestion)
+      maker.top.equalTo(lblQuestion.snp.bottom)
+      maker.height.equalTo(80)
     }
+    
+    /// - Note: Default
+    //    svButtons.snp.makeConstraints { make in
+    //      make.leading.trailing.equalTo(lblQuestion)
+    //      make.top.equalTo(lblQuestion.snp.bottom).offset(16)
+    //      make.height.equalTo(80)
+    //    }
   }
   
   func updateProgress(to progress: Double) {
@@ -82,6 +135,7 @@ extension QuizViewController {
       make.leading.equalToSuperview()
     }
   }
+  
 }
 
 // MARK: - Orientation Transition Handling
