@@ -1,0 +1,6 @@
+framework module Pods_Far_Out_Photos {
+  umbrella header "Pods-Far Out Photos-umbrella.h"
+
+  export *
+  module * { export * }
+}

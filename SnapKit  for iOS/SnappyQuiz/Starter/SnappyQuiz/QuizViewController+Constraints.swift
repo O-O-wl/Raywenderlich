@@ -45,14 +45,17 @@ extension QuizViewController {
       make.top.equalTo(lblTimer.snp.bottom).offset(24)
       make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
     }
+    
     lblMessage.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+    
     svButtons.snp.makeConstraints { make in
       make.leading.trailing.equalTo(lblQuestion)
       make.top.equalTo(lblQuestion.snp.bottom).offset(16)
       make.height.equalTo(80)
     }
+    
   }
   
   func updateProgress(to progress: Double) {

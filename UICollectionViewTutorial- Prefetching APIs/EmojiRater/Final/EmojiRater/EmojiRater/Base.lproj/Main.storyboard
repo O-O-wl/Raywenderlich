@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KSd-GH-kqa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Emoji View Controller-->
+        <scene sceneID="DK9-l6-mwj">
+            <objects>
+                <collectionViewController id="KSd-GH-kqa" customClass="EmojiViewController" customModule="EmojiRater" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="039-Q1-kA6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="19" minimumInteritemSpacing="19" id="kgx-gS-8ms">
+                            <size key="itemSize" width="160" height="160"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="18" minY="24" maxX="18" maxY="18"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiCell" id="g2c-Pz-OAa" customClass="EmojiViewCell" customModule="EmojiRater" customModuleProvider="target">
+                                <rect key="frame" x="18" y="24" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐍" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCD-sc-uFQ" userLabel="Emoji Label">
+                                            <rect key="frame" x="4" y="4" width="152" height="152"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="140"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👍" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79c-Eh-zZs" userLabel="Rating Label">
+                                            <rect key="frame" x="98" y="92" width="54" height="60"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <size key="shadowOffset" width="-2" height="-3"/>
+                                        </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tWj-ch-lRN" userLabel="Loading Indicator">
+                                            <rect key="frame" x="61.5" y="61.5" width="37" height="37"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="tWj-ch-lRN" firstAttribute="centerY" secondItem="g2c-Pz-OAa" secondAttribute="centerY" id="0IC-fk-5xj"/>
+                                    <constraint firstItem="UCD-sc-uFQ" firstAttribute="leading" secondItem="g2c-Pz-OAa" secondAttribute="leading" constant="4" id="1a1-sT-Hkb"/>
+                                    <constraint firstAttribute="trailing" secondItem="UCD-sc-uFQ" secondAttribute="trailing" constant="4" id="4jg-xj-umE"/>
+                                    <constraint firstItem="79c-Eh-zZs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="g2c-Pz-OAa" secondAttribute="leading" symbolic="YES" id="9Fr-hm-sja"/>
+                                    <constraint firstAttribute="bottom" secondItem="UCD-sc-uFQ" secondAttribute="bottom" constant="4" id="BQz-q4-5yC"/>
+                                    <constraint firstItem="UCD-sc-uFQ" firstAttribute="top" secondItem="g2c-Pz-OAa" secondAttribute="top" constant="4" id="K6P-t2-TPY"/>
+                                    <constraint firstAttribute="trailing" secondItem="79c-Eh-zZs" secondAttribute="trailing" constant="8" id="Opz-hk-mD8"/>
+                                    <constraint firstItem="tWj-ch-lRN" firstAttribute="centerX" secondItem="g2c-Pz-OAa" secondAttribute="centerX" id="ZM2-7c-oTG"/>
+                                    <constraint firstAttribute="bottom" secondItem="79c-Eh-zZs" secondAttribute="bottom" constant="8" id="cd2-qt-RxP"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="emojiLabel" destination="UCD-sc-uFQ" id="JFC-vI-CsX"/>
+                                    <outlet property="loadingIndicator" destination="tWj-ch-lRN" id="qRQ-ZC-XGG"/>
+                                    <outlet property="ratingLabel" destination="79c-Eh-zZs" id="uFf-bo-JtE"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="KSd-GH-kqa" id="Dju-oz-q7R"/>
+                            <outlet property="delegate" destination="KSd-GH-kqa" id="Dps-Y1-h0D"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gh4-Wg-b29" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
