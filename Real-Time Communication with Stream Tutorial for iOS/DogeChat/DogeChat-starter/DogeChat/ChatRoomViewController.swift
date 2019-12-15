@@ -37,20 +37,26 @@ class ChatRoomViewController: UIViewController {
   
   var username = ""
   
+  let chatRoom = ChatRoom()
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
+
+    chatRoom.setupNetworkCommunication()
+    chatRoom.delegate = self
+    chatRoom.joinChat(userName: username)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-
+    
+    chatRoom.stopChatSession()
   }
 }
 
 //MARK - Message Input Bar
 extension ChatRoomViewController: MessageInputDelegate {
   func sendWasTapped(message: String) {
-    
+    chatRoom.send(message: message)
   }
 }

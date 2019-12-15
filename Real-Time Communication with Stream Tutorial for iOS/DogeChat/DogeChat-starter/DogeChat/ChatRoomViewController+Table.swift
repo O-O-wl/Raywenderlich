@@ -58,3 +58,9 @@ extension ChatRoomViewController: UITableViewDataSource, UITableViewDelegate {
     tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
   }
 }
+
+extension ChatRoomViewController: ChatRoomDelegate {
+  func received(message: Message) {
+    insertNewMessageCell(message)
+  }
+}
