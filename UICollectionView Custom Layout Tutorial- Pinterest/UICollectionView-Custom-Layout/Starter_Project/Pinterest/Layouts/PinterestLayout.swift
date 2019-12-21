@@ -45,8 +45,6 @@ class PinterestLayout: UICollectionViewLayout {
     return collectionView.bounds.width - padding
   }
   
-  
-  
   /// - Note: collectionViewContentSize
   /// 콜렉션뷰의 컨텐트뷰들의 높이와 너비를 반환
   override var collectionViewContentSize: CGSize {
